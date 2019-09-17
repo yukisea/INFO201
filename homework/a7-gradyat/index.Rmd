@@ -1,0 +1,34 @@
+---
+title: "World Data - Collaboration Report"
+author: "Yuki Ono, Morgan Taylor, Grady Thompson, Jiaxing Wang"
+date: "February 26, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source("scripts/summary-info.R")
+data = read.csv("data/wdvp.csv", stringsAsFactors = FALSE)
+library(dplyr)
+source("scripts/chart1.R")
+```
+
+## Summary
+
+Summary goes here.
+
+## Chart 1
+
+This plot shows the correlation between GDP and the [Happy Planet Index](http://happyplanetindex.org/about/).
+
+```{r}
+intro_function(dataset = data)
+```
+```{r}
+plot
+```
+
+
+## Chart 2
+
+Briefly talk about chart 2, then insert it.

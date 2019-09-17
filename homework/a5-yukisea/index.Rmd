@@ -1,0 +1,41 @@
+---
+title: "index.Rmd"
+author: "Yuki"
+date: "2019/2/11"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source("analysis.R")
+library("knitr")
+```
+
+## Summary report of shootings(2018)
+
+*Shootings-2018.csv* contains every single incident of United States in 2018. From the data set, we can tell these following things.
+
+As whole, `r num_shootings` shootings occured in United States in 2018, and these indidents killed `r num_died` people. The most impacted city was `r most_impacted$city`, the number of killed people is `r most_impacted$sum_killed` and `r most_impacted$sum_injured` people got injured. This time, the impact was calculated by following equasion.
+
+_impact = num_killed * 3 + num_injured_
+
+As a state level, the most dangerous state is `r dangerous_state$state`. The impact value was `r dangerous_state$sum_impact`.(death: `r dangerous_state$sum_killed`, injuries: `r dangerous_state$sum_injured`)
+
+## Summary Table
+Summary Table is as following.
+
+`r kable(summary_table)`
+From this table, It seems that Califolnia, Florida and Illinois are three the most impacted states. However, these states have large population, so we cannot decide that these states are dangerous. New York has also large population but its impact value is small.
+
+## Description of a particular incident
+The most impacted incident was `r impacted_city$city` in `r impacted_city$state` on `r impacted_city$date`. The number of died people were `r impacted_city$num_killed` and `r impacted_city$num_injure` got injured. The impact of the shooting was very huge and have reverberated far beyond school, Marjory Stoneman Douglas High in Parkland, Fla., as schools around the nation closed Friday, or canceled activities after receiving threats. A teacher in Denver said she moved items from a closet in her classroom “to make more space for 9-year-olds to hide.”
+
+from [New York Times, ‘How Did This Happen?’: Grief and Fury After Florida Shooting](https://www.nytimes.com/2018/02/16/us/florida-shooting.html)
+
+## An interactive map
+This is an interactive map. When your mouse is on the marker, it shows the number of victims, and when you click it, it shows the date incident occured.
+`r marker_map`
+
+## A plot of your choice
+`r plot`
+This chart shows the number of victims of each state. As you can see, Califolnia, Florida and Illinois are have huge victims. The main reason for this is these states have large population. However, New York has few victims while it has a large population, so we think that New York is relatively safe state. About death rete, Pennsylvania is very high.

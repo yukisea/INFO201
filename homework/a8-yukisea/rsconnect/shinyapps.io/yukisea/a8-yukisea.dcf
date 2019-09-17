@@ -1,0 +1,13 @@
+name: a8-yukisea
+title: a8-yukisea
+username:
+account: yukisea
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 760422
+bundleId: 1915615
+url: https://yukisea.shinyapps.io/a8-yukisea/
+when: 1551744866.44099
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: LICENSE|README.md
